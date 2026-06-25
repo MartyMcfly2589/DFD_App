@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VFD Activity Reports</title>
+<style>
+body{font-family:Arial,sans-serif;margin:20px}
+table{border-collapse:collapse;width:100%}
+td,th{border:1px solid #ccc;padding:6px}
+.section{margin-bottom:20px}
+</style>
+</head>
+<body>
+<h1>Volunteer Fire/EMS Activity Reports</h1>
+
+<div class="section">
+<h2>New Report</h2>
+<input id="callType" placeholder="Call Type">
+<input id="address" placeholder="Address">
+<br><br>
+
+<h3>Personnel</h3>
+<table id="personnelTable">
+<tr><th>Name</th><th>Reported</th><th>Responded</th></tr>
+</table>
+
+<h3>Times</h3>
+<div id="times"></div>
+
+<button onclick="saveCall()">Save Report</button>
+</div>
+
+<script>
+const timeEvents=[
+"Page","En Route","On Scene","To Hospital",
+"With Paramedics","At Hospital","Clear","At Station"
+];
+
+window.onload=()=>{
+  const t=document.getElementById("times");
+  timeEvents.forEach(e=>{
+    t.innerHTML+=`${e}: <input type="time" id="${e.replace(/ /g,'')}"><br>`;
+  });
+};
+
+function saveCall(){
+  const data={
+    callType:document.getElementById('callType').value,
+    address:document.getElementById('address').value
+  };
+  alert("Connect saveCall() to Apps Script Web App endpoint.");
+  console.log(data);
+}
+</script>
+</body>
+</html>
