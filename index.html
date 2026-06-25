@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VFD Activity Reports</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>VFD Activity Reports</h1>
+
+<div class="card">
+<h2>New Report</h2>
+<label>Call ID</label>
+<input id="callId" readonly>
+
+<label>Date</label>
+<input type="date" id="callDate">
+
+<label>Call Type</label>
+<select id="callType">
+<option>EMS</option>
+<option>MVC</option>
+<option>Structure Fire</option>
+<option>Grass Fire</option>
+<option>Public Assist</option>
+<option>Alarm</option>
+<option>Rescue</option>
+<option>HazMat</option>
+<option>Mutual Aid</option>
+<option>Other</option>
+</select>
+
+<label>Address</label>
+<input id="address">
+
+<h3>Report Writer</h3>
+<select id="reportWriter"></select>
+
+<h3>Apparatus</h3>
+<div id="apparatus"></div>
+
+<h3>Personnel</h3>
+<table id="personnelTable">
+<thead><tr><th>Name</th><th>Reported</th><th>Responded</th></tr></thead>
+<tbody></tbody>
+</table>
+
+<h3>Times</h3>
+<div id="times"></div>
+
+<h3>Narrative</h3>
+<textarea id="narrative"></textarea>
+
+<button onclick="saveReport()">Save Report</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
